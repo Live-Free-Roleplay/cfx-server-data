@@ -208,7 +208,7 @@ AddEventHandler('_chat:messageEntered', function(author, color, message, mode)
 
     local source = source
 
-    routeMessage(source, author, message, mode)
+    --routeMessage(source, author, message, mode)
 end)
 
 AddEventHandler('__cfx_internal:commandFallback', function(command)
@@ -226,7 +226,7 @@ AddEventHandler('playerJoining', function()
         return
     end
 
-    TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' joined.')
+    --TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' joined.')
 end)
 
 AddEventHandler('playerDropped', function(reason)
@@ -234,12 +234,12 @@ AddEventHandler('playerDropped', function(reason)
         return
     end
 
-    TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' left (' .. reason .. ')')
+    --TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) ..' left (' .. reason .. ')')
 end)
 
-RegisterCommand('say', function(source, args, rawCommand)
+--[[RegisterCommand('say', function(source, args, rawCommand)
     routeMessage(source, (source == 0) and 'console' or GetPlayerName(source), rawCommand:sub(5), nil, true)
-end)
+end)--]]
 
 -- command suggestions for clients
 local function refreshCommands(player)

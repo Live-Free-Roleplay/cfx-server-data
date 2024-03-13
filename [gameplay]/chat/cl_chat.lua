@@ -230,10 +230,10 @@ local isFirstHide = true
 
 if not isRDR then
   if RegisterKeyMapping then
-    RegisterKeyMapping('toggleChat', 'Toggle chat', 'keyboard', 'l')
+    --RegisterKeyMapping('toggleChat', 'Toggle chat', 'keyboard', 'l')
   end
 
-  RegisterCommand('toggleChat', function()
+ --[[ RegisterCommand('toggleChat', function()
     if chatHideState == CHAT_HIDE_STATES.SHOW_WHEN_ACTIVE then
       chatHideState = CHAT_HIDE_STATES.ALWAYS_SHOW
     elseif chatHideState == CHAT_HIDE_STATES.ALWAYS_SHOW then
@@ -245,7 +245,7 @@ if not isRDR then
     isFirstHide = false
 
     SetResourceKvp('hideState', tostring(chatHideState))
-  end, false)
+  end, false)--]]
 end
 
 Citizen.CreateThread(function()
